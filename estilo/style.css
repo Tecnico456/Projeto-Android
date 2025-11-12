@@ -1,0 +1,288 @@
+@charset "UTF-8"; /* CSS Document */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); 
+
+@font-face {
+    /* A regra @font-face no CSS permite que você utilize fontes personalizadas em seu site, mesmo que elas não estejam instaladas no computador do usuário. No trecho selecionado, está sendo definida uma fonte chamada 'Android'. O arquivo da fonte está localizado no caminho idroid.otf e é especificado como do tipo opentype através do parâmetro format('opentype'). O atributo font-weight: normal; indica que esta definição corresponde ao peso normal da fonte.
+    A função format('opentype') dentro da regra @font-face serve para informar ao navegador qual é o formato do arquivo de fonte que está sendo utilizado, neste caso, o formato OpenType (.otf). Isso ajuda o navegador a identificar corretamente o tipo de fonte e decidir se ele é compatível para exibição. Especificar o formato pode melhorar a compatibilidade entre diferentes navegadores e garantir que a fonte seja carregada e renderizada corretamente.
+*/
+
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype'); 
+    font-weight: normal;
+}
+
+/*
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+/* 
+    O seletor :root em CSS representa o elemento raiz do documento, que normalmente é o <html>.
+    Ele é frequentemente utilizado para definir variáveis CSS globais (custom properties) que podem ser reutilizadas em todo o documento.
+    Isso facilita a manutenção e a consistência do estilo, permitindo alterar valores em um único lugar.
+    As variáveis definidas no :root podem ser acessadas em qualquer lugar do CSS usando a sintaxe var(--nome-da-variavel).
+    Neste exemplo, as cores são definidas como variáveis CSS, permitindo fácil reutilização e
+    modificação em todo o estilo do documento.
+    As cores definidas são:
+    - --color0: #c5ebd6 (cor de fundo)
+    - --color1: #83e1ad (cor clara)
+    - --color2: #3ddc84 (cor média)
+    - --color3: #2fa866 (cor escura)
+    - --color4: #1a5c37 (cor muito escura)
+    - --color5: #063d1e (cor mais escura)
+    Essas variáveis podem ser usadas para estilizar elementos, garantindo que as cores sejam consistentes
+    e fáceis de atualizar.
+    As cores são escolhidas para criar uma paleta harmoniosa, com um gradiente de tons de verde,
+    proporcionando uma sensação de frescor e natureza.
+
+*/
+:root {
+    --color0: #c5ebd6;
+    --color1: #83e1ad;
+    --color2: #3ddc84;
+    --color3: #2fa866;
+    --color4: #1a5c37;
+    --color5: #063d1e;
+    --font-padrao: Arial, verdana, helvetica, sans-serif; 
+    --font-destaque: 'Bebas Neue', cursive, sans-serif;
+    --font-android: 'Android', cursive, sans-serif;
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    /* O seletor universal * é usado para aplicar estilos a todos os elementos do documento.
+    Neste caso, ele está definindo o box-sizing como border-box, o que significa que
+    a largura e altura de um elemento incluirão o padding e a borda, tornando o layout mais previsível.
+    Além disso, está definindo margin e padding como 0, o que remove as margins e paddings
+    padrão de todos os elementos, garantindo que não haja espaçamento indesejado ao redor dos
+    elementos. Isso é útil para criar um layout mais consistente e controlado, especialmente
+    quando se está começando a estilizar uma página do zero.
+*/
+   }
+
+body {
+    background-color: var(--color0);
+    font-family: var(--font-padrao);
+}
+
+a.externo::after { /* O seletor a.externo::after seleciona todos os elementos <a> que possuem a classe externo e aplica estilos ao pseudo-elemento ::after, que é inserido após o conteúdo do elemento. Isso é útil para adicionar ícones ou outros elementos visuais após o texto do link, sem a necessidade de modificar o HTML diretamente. */
+    content: '\1F517'; /* A propriedade content: '\1F517'; adiciona um ícone de link (🔗) após o texto dos links que possuem a classe externo. Isso é útil para indicar visualmente que o link leva a um site externo, ajudando os usuários a entenderem que clicar nele os levará para fora do site atual. O código Unicode '\1F517' representa o ícone de link. */
+    font-size: 0.8em; /* A propriedade font-size: 0.8em; define o tamanho da fonte do ícone adicionado após o texto do link como 80% do tamanho da fonte base do elemento pai, tornando o ícone um pouco menor que o texto principal. Isso é útil para garantir que o ícone não se destaque excessivamente em relação ao texto, mantendo uma aparência equilibrada e estética. */
+    margin-left: 4px; /* A propriedade margin-left: 4px; adiciona um espaçamento de 4 pixels à esquerda do ícone, criando um espaço entre o texto do link e o ícone. Isso melhora a legibilidade e a estética, evitando que o ícone fique muito próximo ao texto e garantindo que ambos os elementos sejam facilmente distinguíveis. */
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--color3), var(--color5)); /* A propriedade background-image: linear-gradient(to bottom, var(--color3), var(--color5)); cria um gradiente linear que vai do topo para a base do cabeçalho, começando com a cor definida em --color3 e terminando com a cor definida em --color5. Isso adiciona um efeito visual atraente ao cabeçalho, tornando-o mais dinâmico e interessante. */
+    font-family: var(--font-destaque);
+    min-height: 150px; /* A propriedade min-height: 150px; garante que o cabeçalho (header) tenha uma altura mínima de 150 pixels, mesmo que o conteúdo seja menor. Isso é útil para manter uma aparência consistente e garantir que o cabeçalho não fique muito pequeno em telas menores ou quando o conteúdo for escasso. */
+    text-align: center; /* A propriedade text-align: center; centraliza o texto dentro do cabeçalho, garantindo que o conteúdo, como títulos e parágrafos, fique alinhado no centro horizontalmente. Isso é especialmente útil para criar uma aparência mais equilibrada e estética no cabeçalho da página. */
+    padding-top: 40px; /* A propriedade padding-top: 40px; adiciona um espaçamento interno de 40 pixels na parte superior do cabeçalho, criando um espaço confortável entre o topo do cabeçalho e o conteúdo dentro dele. Isso é útil para melhorar a legibilidade e a estética, especialmente se houver elementos como logotipos ou títulos que precisam de espaço extra. */
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--font-destaque); /* A propriedade font-family: var(--font-destaque); define a fonte do título (h1) dentro do cabeçalho, utilizando a variável CSS --font-destaque, que foi definida anteriormente. Isso garante que o título seja exibido com a fonte destacada especificada no :root, proporcionando um estilo visual consistente e atraente. */
+    margin-bottom: 20px; /* A propriedade margin-bottom: 20px; adiciona um espaçamento de 20 pixels abaixo do título (h1) dentro do cabeçalho, separando-o de outros elementos que possam estar abaixo dele, como parágrafos ou imagens. Isso ajuda a evitar que o conteúdo fique muito próximo e melhora a legibilidade e a estética geral da página. */
+    font-size: 3em; /* A propriedade font-size: 3em; define o tamanho da fonte do título (h1) como três vezes o tamanho da fonte base do elemento pai, tornando o texto significativamente maior e mais destacado. Isso é útil para chamar a atenção do usuário para o título principal da página, garantindo que ele seja facilmente legível e visualmente impactante. */
+    font-weight: normal; /* A propriedade font-weight: normal; define o peso da fonte do título (h1) como normal, o que significa que o texto não será exibido em negrito. Isso é útil para manter uma aparência limpa e legível, especialmente quando o título já é grande e destacado por seu tamanho. */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* A propriedade text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); adiciona uma sombra ao texto do título (h1), criando um efeito de profundidade e destacando o texto em relação ao fundo. A sombra é deslocada 2 pixels para a direita e para baixo, com um desfoque de 4 pixels e uma cor preta semi-transparente (rgba(0, 0, 0, 0.5)). Isso melhora a legibilidade do título e dá um toque estético mais moderno. */
+}
+
+header > p {
+    color: white
+    font-family: var(--font-padrao); /* A propriedade font-family: var(--font-padrao); define a fonte do parágrafo dentro do cabeçalho, utilizando a variável CSS --font-padrao, que foi definida anteriormente.
+    Isso garante que o texto do parágrafo seja exibido com a fonte padrão especificada no :root, proporcionando consistência tipográfica em todo o documento. */
+    font-size: 1.2em; /* A propriedade font-size: 1.2em; define o tamanho da fonte do parágrafo como 1.2 vezes o tamanho da fonte base do elemento pai, tornando o texto um pouco maior que o normal. Isso é útil para destacar o texto e melhorar a legibilidade, especialmente em cabeçalhos onde se deseja chamar a atenção do usuário. */
+    max-width: 600px; /* A propriedade max-width: 500px; limita a largura máxima do parágrafo a 500 pixels, garantindo que o texto não se estenda demais em telas maiores, o que poderia dificultar a leitura. Isso é especialmente útil para manter uma boa legibilidade em dispositivos com telas largas, como desktops e laptops. */
+    padding-right; 10px; /* A propriedade padding-right: 10px; adiciona um espaçamento interno de 10 pixels à direita do parágrafo, garantindo que o texto não fique colado à borda do elemento pai. Isso melhora a legibilidade e a estética, proporcionando um espaço confortável para o texto respirar e evitando que ele pareça apertado ou desorganizado. */
+    padding-left: 10px; /* A propriedade padding-left: 10px; adiciona um espaçamento interno de 10 pixels à esquerda do parágrafo, garantindo que o texto não fique colado à borda do elemento pai. Isso melhora a legibilidade e a estética, proporcionando um espaço confortável para o texto respirar e evitando que ele pareça apertado ou desorganizado. */
+    margin: 0 auto; /* A propriedade margin: 0 auto; centraliza o parágrafo horizontalmente dentro do seu elemento pai, garantindo que ele fique alinhado no centro da página ou do contêiner. Isso é especialmente útil para textos mais curtos, como descrições ou subtítulos, onde a centralização melhora a estética e a legibilidade. */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* A propriedade text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); adiciona uma sombra sutil ao texto do parágrafo, criando um efeito de profundidade e destacando o texto em relação ao fundo. A sombra é deslocada 1 pixel para a direita e para baixo, com um desfoque de 2 pixels e uma cor preta semi-transparente (rgba(0, 0, 0, 0.3)). Isso melhora a legibilidade do texto e dá um toque estético mais moderno. */
+}
+
+
+/* Estilo para a barra de navegação inteira */
+nav {
+    background-color: var(--color5);
+    padding: 10px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.192);
+    text-align: left; /* Ou 'center' se quiser o menu centralizado */
+}
+
+/* Removemos o estilo padrão da lista <ul> */
+nav ul {
+    list-style-type: none; /* Remove as bolinhas */
+    padding: 0;
+    margin: 0;
+}
+
+/* AQUI ESTÁ A MUDANÇA PRINCIPAL */
+/* Fazemos cada item <li> ficar ao lado do outro */
+nav li {
+    display: inline-block; /* Faz os itens se alinharem horizontalmente */
+    margin-right: 15px;    /* Espaço entre os itens */
+}
+
+/* Estilo dos links <a> */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Efeito ao passar o mouse */
+nav a:hover {
+    background-color: var(--color3);
+    color: var(--color5);
+    border-radius: 5px;
+    transition-duration: 0.4s; /* Deixa o efeito mais suave */
+}
+
+main {
+    min-width: 300px; /* A propriedade min-width: 300px; garante que o elemento principal (main) tenha uma largura mínima de 300 pixels, mesmo que o conteúdo seja menor. Isso é útil para manter a legibilidade e a estrutura do layout em telas menores, evitando que o conteúdo fique muito comprimido ou difícil de ler. */
+    padding: 20px; /* A propriedade padding: 20px; adiciona um espaçamento interno de 20 pixels ao redor do conteúdo dentro do elemento main, garantindo que o texto e as imagens não fiquem colados às bordas do contêiner. Isso melhora a legibilidade e a estética do layout, proporcionando um espaço confortável para o conteúdo respirar. */
+    border-bottom-left-radius: 10px; /* A propriedade border-bottom-left-radius: 10px; aplica um arredondamento de 10 pixels no canto inferior esquerdo do elemento main, suavizando a aparência e dando um toque estético mais moderno. Isso é especialmente útil em designs que buscam uma estética mais amigável e menos rígida. */
+    border-bottom-right-radius: 10px; /* A propriedade border-bottom-right-radius: 10px; aplica um arredondamento de 10 pixels no canto inferior direito do elemento main, suavizando a aparência e dando um toque estético mais moderno. Isso é especialmente útil em designs que buscam uma estética mais amigável e menos rígida. */
+    max-width: 1000px; /* A propriedade max-width: 1000px; limita a largura máxima do elemento main a 1000 pixels, garantindo que o conteúdo não se estenda demais em telas maiores, o que poderia dificultar a leitura. Isso é especialmente útil para manter uma boa legibilidade em dispositivos com telas largas, como desktops e laptops. */
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* A propriedade box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); adiciona uma sombra sutil ao redor do elemento main, criando um efeito de profundidade e destacando o conteúdo em relação ao fundo. Isso melhora a estética geral da página e ajuda a guiar o olhar do usuário para o conteúdo principal. */
+    margin-bottom: 30px; /* A propriedade margin-bottom: 30px; adiciona um espaçamento de 30 pixels abaixo do elemento main, separando-o de outros elementos que possam estar abaixo dele, como o rodapé. Isso ajuda a evitar que o conteúdo fique muito próximo e melhora a legibilidade e a estética geral da página. */
+}
+
+
+main h1 {
+    color: var(--color5);
+    font-family: var(--font-android);
+
+    /*No HTML, <main> é uma tag semântica que representa o conteúdo principal do documento. Ela deve conter as informações mais importantes da página, ou seja, aquilo que é único e central para aquele documento, excluindo cabeçalhos, menus, barras laterais e rodapés.
+
+    O uso do <main> ajuda na acessibilidade e na organização do código, pois facilita para leitores de tela e mecanismos de busca identificarem rapidamente o conteúdo principal da página. Em seu CSS, ao usar o seletor main h1, você está aplicando estilos especificamente aos títulos <h1> que estão dentro do conteúdo principal da página.*/
+
+    font-weight: normal; /* A propriedade font-weight: normal; define o peso da fonte do título (h1) como normal, o que significa que o texto não será exibido em negrito. Isso é útil para manter uma aparência limpa e legível, especialmente quando o título já é grande e destacado por seu tamanho. */
+
+    font-size: 1.8em; /* A propriedade font-size: 1.8em; define o tamanho da fonte do título (h1) como 1.8 vezes o tamanho da fonte base do elemento pai, tornando o texto significativamente maior e mais destacado. Isso é útil para chamar a atenção do usuário para o título principal da seção, garantindo que ele seja facilmente legível e visualmente impactante. */
+}
+
+main h2 {
+    color: var(--color4);
+    font-family: var(--font-android);
+    font-size: 1.1em; /* A propriedade font-size: 1.3em; define o tamanho da fonte do título (h2) como 1.3 vezes o tamanho da fonte base do elemento pai, tornando o texto um pouco maior que o normal. Isso é útil para destacar o texto e melhorar a legibilidade, especialmente em títulos secundários dentro do conteúdo principal da página. */
+    font-weight: normal; /* A propriedade font-weight: normal; define o peso da fonte do título (h2) como normal, o que significa que o texto não será exibido em negrito. Isso é útil para manter uma aparência limpa e legível, especialmente quando o título já é grande e destacado por seu tamanho. */
+    background-image: linear-gradient(to right, var(--color1), transparent); /* A propriedade background-image: linear-gradient(to right, var(--color1), transparent); cria um gradiente linear que vai da cor definida em --color1 para transparente, aplicando-o como fundo do título (h2). Isso adiciona um efeito visual interessante ao título, destacando-o e tornando-o mais atraente visualmente. */
+    text-indent: 8px; /* A propriedade text-indent: 8px; aplica um recuo de 8 pixels na primeira linha do título (h2), criando um espaço visual que indica o início de um novo título. Isso é uma prática comum em muitos estilos de escrita e ajuda a melhorar a legibilidade, especialmente em textos longos, ao tornar mais fácil para o leitor identificar onde cada seção começa. */
+
+}
+
+main p { /* Colocando o seletor main p sem o sinal de maior (>) significa que estamos selecionando todos os parágrafos dentro do elemento main, independentemente de sua profundidade na hierarquia. Isso é útil para aplicar estilos a todos os parágrafos dentro do conteúdo principal da página, garantindo consistência na apresentação do texto. */
+    margin: 15px 0px; /* A propriedade margin: 15px 0px; define uma margem de 15 pixels na parte superior e inferior do parágrafo, enquanto a margem esquerda e direita é definida como 0 pixels. Isso cria um espaçamento vertical entre os parágrafos, melhorando a legibilidade do texto ao evitar que os parágrafos fiquem muito próximos uns dos outros. */
+    text-align: justify; /* A propriedade text-align: justify; alinha o texto do parágrafo de forma que as linhas sejam distribuídas uniformemente entre as margens esquerda e direita, criando um bloco de texto com bordas retas. Isso é útil para melhorar a legibilidade em textos longos, pois proporciona uma aparência mais organizada e profissional. */
+    text-indent: 30px; /* A propriedade text-indent: 30px; aplica um recuo de 30 pixels na primeira linha do parágrafo, criando um espaço visual que indica o início de um novo parágrafo. Isso é uma prática comum em muitos estilos de escrita e ajuda a melhorar a legibilidade, especialmente em textos longos, ao tornar mais fácil para o leitor identificar onde cada parágrafo começa. */
+    font-size: 1em; /* A propriedade font-size: 1em; define o tamanho da fonte do parágrafo como igual ao tamanho da fonte base do elemento pai, garantindo que o texto seja exibido em um tamanho legível e consistente com o restante do conteúdo. Isso é útil para manter a hierarquia tipográfica e a legibilidade do texto em todo o documento. */
+    line-height: 2em; /* A propriedade line-height: 2em; define a altura da linha do parágrafo como duas vezes o tamanho da fonte, criando um espaçamento vertical maior entre as linhas de texto. Isso melhora a legibilidade, especialmente em textos longos, ao evitar que as linhas fiquem muito próximas umas das outras, facilitando a leitura e a compreensão do conteúdo. */
+}
+
+main strong { /* O seletor main strong seleciona todos os elementos <strong> que estão dentro do elemento <main>. O elemento <strong> é usado para indicar que o texto tem uma importância especial, geralmente exibindo-o em negrito. Ao aplicar estilos a esse seletor, você pode personalizar a aparência do texto enfatizado dentro do conteúdo principal da página. */
+    color: var(--color4); /* A propriedade color: var(--color4); define a cor do texto dentro do elemento <strong> como a cor especificada pela variável CSS --color4, que foi definida anteriormente. Isso garante que o texto enfatizado seja exibido com uma cor consistente e harmoniosa com o restante do design da página. */
+    font-weight: bold; /* A propriedade font-weight: bold; aplica um peso de fonte negrito ao texto dentro do elemento <strong>, tornando-o mais destacado e visível. Isso é útil para enfatizar informações importantes ou palavras-chave dentro do conteúdo, ajudando a guiar o leitor para os pontos mais relevantes do texto. */
+
+}
+
+main a {
+    text-decoration: none; /* A propriedade text-decoration: none; remove o sublinhado padrão dos links, proporcionando uma aparência mais limpa e moderna. Isso é útil para designs que preferem links sem sublinhado, mas ainda assim é importante garantir que os links sejam claramente identificáveis de outra forma, como por meio de cor ou estilo de fonte. */
+    font-weight: bold; /* A propriedade font-weight: bold; aplica um peso de fonte negrito ao texto do link, tornando-o mais destacado e visível. Isso é útil para chamar a atenção do usuário para o link, especialmente em contextos onde é importante que o usuário perceba que há uma ação ou informação adicional disponível. */
+    color: var(--color5); /* A propriedade color: var(--color5); define a cor do texto do link como a cor especificada pela variável CSS --color5, que foi definida anteriormente. Isso garante que o link seja exibido com uma cor consistente e harmoniosa com o restante do design da página, além de ser facilmente identificável como um link clicável. */
+    background-color: var(--color1); /* A propriedade background-color: var(--color1); define a cor de fundo do link como a cor especificada pela variável CSS --color1, que foi definida anteriormente. Isso cria um contraste visual com o texto do link, tornando-o mais destacado e fácil de identificar como um elemento interativo na página. */
+    padding: 2px 6px; /* A propriedade padding: 2px 6px; adiciona um espaçamento interno de 2 pixels na parte superior e inferior e 6 pixels nas laterais do link, criando um espaço confortável ao redor do texto. Isso melhora a usabilidade, tornando o link mais fácil de clicar e visualmente mais agradável, além de evitar que o texto fique muito próximo das bordas do elemento. */
+}
+
+main a:hover {
+    text-decoration: underline; /* A propriedade text-decoration: underline; adiciona um sublinhado ao link quando o mouse passa sobre ele, indicando que o link é interativo e pode ser clicado. Isso melhora a usabilidade, pois fornece feedback visual imediato ao usuário, tornando mais claro que o link pode ser clicado. */
+    background-color: var(--color2); /* A propriedade background-color: var(--color2); altera a cor de fundo do link quando o mouse passa sobre ele, criando um efeito visual que indica ao usuário que o link é interativo. Isso melhora a usabilidade, pois fornece feedback visual imediato ao usuário, tornando mais claro que o link pode ser clicado. */
+    color: white; /* A propriedade color: white; altera a cor do texto do link para branco quando o mouse passa sobre ele, criando um contraste com a cor de fundo definida anteriormente. Isso torna o link mais legível e destacado durante a interação, melhorando a experiência do usuário ao navegar pela página. */
+    transition-duration: 0.4s; /* A propriedade transition-duration: 0.4s; define a duração da transição para 0.4 segundos, suavizando a mudança de cor do fundo e do texto quando o mouse passa sobre o link. Isso cria um efeito visual mais agradável e moderno, tornando a interação mais fluida e atraente para o usuário. */
+
+}
+main img {
+    width: 100%; /* A propriedade width: 100% faz com que a imagem ocupe toda a largura do elemento pai (main (conteudo principal)), adaptando-se ao tamanho disponível. Isso é útil para garantir que a imagem se ajuste responsivamente ao layout da página, especialmente em dispositivos móveis ou telas de tamanhos variados.
+    */
+    height: auto; /* A propriedade height: auto; garante que a altura da imagem seja ajustada proporcionalmente à sua largura, mantendo as proporções originais da imagem. Isso evita distorções e garante que a imagem seja exibida corretamente, independentemente do tamanho do elemento pai. */
+    border-radius: 10px; /* A propriedade border-radius: 10px; aplica um arredondamento de 10 pixels nos cantos da imagem, suavizando sua aparência e dando um toque estético mais moderno. Isso é especialmente útil em designs que buscam uma estética mais amigável e menos rígida. */
+} 
+
+main img.pequena {
+    max-width: 350px; /* A propriedade max-width: 350px; limita a largura máxima da imagem a 350 pixels, garantindo que ela não se torne muito grande em telas maiores. Isso é útil para manter a legibilidade e a estética do layout, especialmente quando a imagem é usada como um elemento decorativo ou ilustrativo. */
+    height: auto; /* Mantém a proporção original da imagem ao ajustar sua altura automaticamente. */
+    display: block; /* A propriedade display: block; faz com que a imagem seja tratada como um bloco, ocupando toda a largura disponível e permitindo margens e espaçamentos adequados ao redor dela. Isso é útil para garantir que a imagem se comporte corretamente dentro do layout, especialmente quando usada em conjunto com outras imagens ou elementos. */
+    margin: 0 auto; /* A propriedade margin: 0 auto; centraliza a imagem horizontalmente dentro do seu elemento pai, garantindo que ela fique alinhada no centro da página ou do contêiner, o que é especialmente útil para imagens menores que o espaço disponível. */
+}
+
+div.video {
+    background-color: var(--color5); /* A propriedade background-color: var(--color5); define a cor de fundo do contêiner de vídeo como a cor especificada pela variável CSS --color5, que foi definida anteriormente. Isso cria um contraste visual com o conteúdo do vídeo, tornando-o mais destacado e fácil de identificar como um elemento interativo na página. */
+    
+    margin: 0px -20px 30px -20px; /* A propriedade margin: 0px -20px 30px -20px; aplica uma margem de 0 pixels na parte superior, -20 pixels na direita, 30 pixels na parte inferior e -20 pixels na esquerda do contêiner de vídeo. Isso faz com que o contêiner se estenda além das bordas do elemento pai (main), criando um efeito visual onde o vídeo parece "sair" do contêiner principal. A margem negativa nas laterais ajuda a alinhar o vídeo com as bordas da página, enquanto a margem inferior de 30 pixels cria um espaçamento confortável entre o vídeo e outros elementos abaixo dele. */
+
+    padding: 20px; /* A propriedade padding: 20px; adiciona um espaçamento interno de 20 pixels ao redor do conteúdo dentro do contêiner de vídeo, garantindo que o vídeo e outros elementos não fiquem colados às bordas do contêiner. Isso melhora a legibilidade e a estética do layout, proporcionando um espaço confortável para o conteúdo respirar. */
+
+    padding-bottom:  56.5%; /* A propriedade padding-bottom: 56.5%; aplica um espaçamento interno na parte inferior do contêiner de vídeo, criando uma proporção de aspecto de 16:9 para o vídeo. Isso é útil para garantir que o vídeo seja exibido corretamente em diferentes tamanhos de tela, mantendo a proporção adequada e evitando distorções. Essa técnica é comumente usada para vídeos responsivos, permitindo que o contêiner se ajuste automaticamente ao tamanho do vídeo. */
+
+    position: relative; /* A propriedade position: relative; posiciona o contêiner de vídeo em relação à sua posição original no fluxo do documento. Isso permite que elementos internos, como o iframe do vídeo, sejam posicionados absolutamente dentro deste contêiner, facilitando o controle do layout e a sobreposição de elementos. É útil para criar layouts mais complexos e personalizados. */
+}
+
+div.video iframe {
+    
+    position: absolute; /* A propriedade position: absolute; posiciona o iframe de forma absoluta em relação ao seu contêiner pai (div.video). Isso permite que o iframe seja posicionado em qualquer lugar dentro do contêiner, independentemente do fluxo normal do documento. É útil para criar layouts mais complexos e personalizados. */
+    top: 5%; /* A propriedade top: 5%; posiciona o iframe a 5% da parte superior do contêiner pai (div.video). Isso cria um espaçamento entre o topo do contêiner e o início do vídeo, garantindo que o vídeo não fique colado à borda superior do contêiner. Esse valor pode ser ajustado conforme necessário para obter o layout desejado. */
+    left: 5%; /* A propriedade left: 5%; posiciona o iframe a 5% da borda esquerda do contêiner pai (div.video). Isso cria um espaçamento entre a borda esquerda do contêiner e o início do vídeo, garantindo que o vídeo não fique colado à borda esquerda do contêiner. Esse valor pode ser ajustado conforme necessário para obter o layout desejado. */
+    height: 90%; /* A propriedade height: 90%; define a altura do iframe como 90% da altura do contêiner pai (div.video). Isso garante que o vídeo ocupe a maior parte do espaço disponível dentro do contêiner, mantendo uma margem de 10% para criar um espaçamento confortável ao redor do vídeo. Esse valor pode ser ajustado conforme necessário para obter o layout desejado. */
+    width: 90%; /* A propriedade width: 90%; define a largura do iframe como 90% da largura do contêiner pai (div.video). Isso garante que o vídeo ocupe a maior parte do espaço disponível dentro do contêiner, mantendo uma margem de 10% para criar um espaçamento confortável ao redor do vídeo. Esse valor pode ser ajustado conforme necessário para obter o layout desejado. */
+}
+
+aside {
+    background-color: var(--color1); /* A propriedade background-color: var(--color1); define a cor de fundo do elemento aside como a cor especificada pela variável CSS --color1, que foi definida anteriormente. Isso garante que o aside tenha uma cor consistente e harmoniosa com o restante do design da página, além de ser facilmente identificável como um elemento secundário. */
+    padding: 10px; /* A propriedade padding: 10px; adiciona um espaçamento interno de 10 pixels ao redor do conteúdo dentro do elemento aside, garantindo que o texto e outros elementos não fiquem colados às bordas do contêiner. Isso melhora a legibilidade e a estética do layout, proporcionando um espaço confortável para o conteúdo respirar. */
+    border-radius: 10px; /* A propriedade border-radius: 10px; aplica um arredondamento de 10 pixels nos cantos do elemento aside, suavizando sua aparência e dando um toque estético mais moderno. Isso é especialmente útil em designs que buscam uma estética mais amigável e menos rígida. */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281); /* A propriedade box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281); adiciona uma sombra ao redor do elemento aside, criando um efeito de profundidade e destacando o conteúdo em relação ao fundo. Isso melhora a estética geral da página e ajuda a guiar o olhar do usuário para o conteúdo secundário. */
+  
+}
+
+aside h3 {
+    background-color: var(--color4); /* A propriedade background-color: var(--color4); define a cor de fundo do título (h3) dentro do elemento aside como a cor especificada pela variável CSS --color4, que foi definida anteriormente. Isso garante que o título seja exibido com uma cor consistente e harmoniosa com o restante do design da página, além de destacá-lo visualmente. */
+    color: white; /* A propriedade color: white; define a cor do texto do título (h3) dentro do elemento aside como branco, garantindo que ele seja facilmente legível sobre o fundo escuro. Isso é importante para manter a visibilidade e a acessibilidade do título, especialmente em designs com alto contraste. */
+    padding: 10px; /* A propriedade padding: 5px; adiciona um espaçamento interno de 5 pixels ao redor do texto do título (h3), garantindo que o texto não fique colado às bordas do elemento. Isso melhora a legibilidade e a estética do título, proporcionando um espaço confortável para o texto respirar e evitando que ele pareça apertado ou desorganizado. */
+    margin: -10px -10px 0px -10px; /* A propriedade margin: -10px -10px 0px -10px; aplica uma margem negativa de 10 pixels em todos os lados do título (h3), exceto na parte superior, onde a margem é de 0 pixels. Isso faz com que o título se estenda até as bordas do elemento aside, criando um efeito visual onde o título parece "abraçar" o contêiner, melhorando a estética e destacando o título em relação ao restante do conteúdo. */
+    border-radius: 10px 10px 0px 0px; /* A propriedade border-radius: 10px 10px 0px 0px; aplica um arredondamento de 10 pixels nos cantos superior esquerdo e direito do título (h3), enquanto os cantos inferior esquerdo e direito permanecem quadrados. Isso cria um efeito visual onde o título parece ter um topo arredondado, suavizando a aparência e dando um toque estético mais moderno. */
+}
+
+
+aside > ul {
+    list-style-type: '\2714\00A0\00A0'; /* A propriedade list-style-type: '\2714\00A0\00A0'; define o estilo dos marcadores da lista como uma marca de seleção (check mark) seguida por dois espaços. Isso é útil para listas onde se deseja destacar os itens como concluídos ou importantes, proporcionando um visual mais personalizado e atraente. */
+    list-style-position: inside; /* A propriedade list-style-position: inside; faz com que os marcadores da lista apareçam dentro do bloco de texto, alinhando-os com o início do texto do item da lista. Isso é útil para listas onde se deseja que os marcadores não criem um recuo adicional, mantendo o layout mais compacto e organizado. */
+    columns: 2; /* A propriedade columns: 2; divide a lista em duas colunas, permitindo que os itens sejam exibidos lado a lado. Isso é útil para listas longas, pois melhora a legibilidade e utiliza melhor o espaço disponível, especialmente em layouts com largura limitada. */
+}
+
+footer {
+    background-color: var(--color5);
+    color: white;
+    text-align: center; /* A propriedade text-align: center; centraliza o texto dentro do rodapé, garantindo que o conteúdo, como direitos autorais ou informações de contato, fique alinhado no centro horizontalmente. Isso é especialmente útil para criar uma aparência mais equilibrada e estética no rodapé da página. */
+    font-size: 0.8em; /* A propriedade font-size: 0.8em; define o tamanho da fonte do texto no rodapé como 80% do tamanho da fonte base do elemento pai, tornando o texto um pouco menor que o normal. Isso é útil para informações secundárias, como direitos autorais ou links adicionais, que não precisam ser tão proeminentes quanto o conteúdo principal da página. */
+    padding: 5px; /* A propriedade padding: 5px; adiciona um espaçamento interno de 5 pixels ao redor do conteúdo dentro do rodapé, garantindo que o texto não fique colado às bordas do elemento. Isso melhora a legibilidade e a estética do rodapé, proporcionando um espaço confortável para o conteúdo respirar e evitando que ele pareça apertado ou desorganizado. */
+}
+
+footer a {
+    color: white; /* A propriedade color: white; define a cor do texto do link no rodapé como branco, garantindo que ele seja facilmente legível sobre o fundo escuro do rodapé. Isso é importante para manter a visibilidade e a acessibilidade do link, especialmente em designs com alto contraste. */
+    text-decoration: none; /* A propriedade text-decoration: none; remove o sublinhado padrão dos links no rodapé, proporcionando uma aparência mais limpa e moderna. Isso é útil para designs que preferem links sem sublinhado, mas ainda assim é importante garantir que os links sejam claramente identificáveis de outra forma, como por meio de cor ou estilo de fonte. */
+    font-weight: bolder; /* A propriedade font-weight: bolder; aplica um peso de fonte mais forte ao texto do link no rodapé, tornando-o mais destacado e visível. Isso é útil para chamar a atenção do usuário para o link, especialmente em contextos onde é importante que o usuário perceba que há uma ação ou informação adicional disponível. */
+}
+
+footer a:hover {
+    text-decoration: underline; /* A propriedade text-decoration: underline; adiciona um sublinhado ao link no rodapé quando o mouse passa sobre ele, indicando que o link é interativo e pode ser clicado. Isso melhora a usabilidade, pois fornece feedback visual imediato ao usuário, tornando mais claro que o link pode ser clicado. */
+    color: var(--color1); /* A propriedade color: var(--color1); altera a cor do texto do link no rodapé quando o mouse passa sobre ele, criando um contraste visual que indica ao usuário que o link é interativo. Isso melhora a usabilidade, pois fornece feedback visual imediato ao usuário, tornando mais claro que o link pode ser clicado. */
+}
